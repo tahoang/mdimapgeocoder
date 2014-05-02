@@ -6,7 +6,9 @@ A library to use Maryland's cascading geocoder in Node.js and the browser
 Use in Node.js
 
 ```javascript
-var MDiMapGeocoder = require('MDiMapGeocoder')
+npm install mdimapgeocoder
+
+var MDiMapGeocoder = require('mdimapgeocoder')
 ```
 
 Use in Browser
