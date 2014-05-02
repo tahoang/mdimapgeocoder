@@ -18,7 +18,10 @@ Use in Browser
 
 Example
 ```javascript
-MDiMapGeocoder.search('1101 Camden Ave, Salisbury MD 21801', function(err, res){
+
+var geocoder = new MDiMapGeocoder()
+
+geocoder.search('1101 Camden Ave, Salisbury MD 21801', function(err, res){
   /*
     res.candidates[0] = 
     {
@@ -31,5 +34,12 @@ MDiMapGeocoder.search('1101 Camden Ave, Salisbury MD 21801', function(err, res){
       "attributes" : {}
     }
   */
+})
+```
+
+Specify WKID to return
+```javascript
+var geocoder = new MDiMapGeocoder({
+  wkid: 26985 // default 4326
 })
 ```

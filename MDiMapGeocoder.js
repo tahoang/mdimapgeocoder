@@ -39,8 +39,9 @@ function MDiMapGeocoder(options) {
     geo_url.query = query
     if(self.options.browser){
       self.callback = next
+      window._MDiMapGeocoder = self
       var script = document.createElement('script')
-      geo_url.query.callback = 'MDiMapGeocoder.browserReturn'
+      geo_url.query.callback = '_MDiMapGeocoder.browserReturn'
       geo_url = url.format(geo_url)
       script.src = geo_url
       document.getElementsByTagName('head')[0].appendChild(script)
@@ -69,7 +70,7 @@ function MDiMapGeocoder(options) {
   }
 }
 
-module.exports = new MDiMapGeocoder()
+module.exports = MDiMapGeocoder
 },{"http":7,"url":25}],3:[function(_dereq_,module,exports){
 /*!
  * The buffer module from node.js, for the browser.

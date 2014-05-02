@@ -2,7 +2,9 @@
 <head>
 <script src="../MDiMapGeocoder.js"></script>
 <script>
-  MDiMapGeocoder.search('1101 Camden Ave, Salisbury MD 21801', function(err, res){
+  var geocoder = new MDiMapGeocoder()
+  
+  geocoder.search('1101 Camden Ave, Salisbury MD 21801', function(err, res){
     console.log(res)
   })
 </script>
