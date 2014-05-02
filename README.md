@@ -22,8 +22,8 @@ Example
 var geocoder = new MDiMapGeocoder()
 
 geocoder.search('1101 Camden Ave, Salisbury MD 21801', function(err, res){
-  /*
-    res.candidates[0] = 
+  // example response
+  res.candidates[0] = 
     {
       "address" : "1101 CAMDEN AVE, SALISBURY, MD, 21801",
       "location" : {
@@ -33,7 +33,6 @@ geocoder.search('1101 Camden Ave, Salisbury MD 21801', function(err, res){
       "score" : 100,
       "attributes" : {}
     }
-  */
 })
 ```
 
