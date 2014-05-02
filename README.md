@@ -1,7 +1,7 @@
 MDiMapGeocoder
 ===============
 
-A library to use Maryland's cascading geocoder in Node.js and the browser
+A library to use [Maryland's cascading geocoder](http://mdimap.us/ArcGIS/rest/services/GeocodeServices/MD.State.MDCascadingLocatorWithZIPCodes/GeocodeServer/) in Node.js and the browser
 
 Use in Node.js
 
