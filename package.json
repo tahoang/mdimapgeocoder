@@ -1,0 +1,23 @@
+{
+  "name": "MDiMapGeocoder",
+  "version": "0.1.0",
+  "description": "MDiMapGeocoder ===============",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frankrowe/MDiMapGeocoder"
+  },
+  "author": "Frank Rowe <fsrowe@gmail.com> (http://frankrowe.org/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frankrowe/MDiMapGeocoder/issues"
+  },
+  "homepage": "https://github.com/frankrowe/MDiMapGeocoder",
+  "dependencies": {
+    "tap": "^0.4.9",
+    "browserify": "^3.44.2"
+  }
+}
