@@ -1,4 +1,4 @@
-MDiMap-geocoder
+MDiMapGeocoder
 ===============
 
 A library to use Maryland's cascading geocoder in Node.js and the browser
