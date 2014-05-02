@@ -4220,8 +4220,8 @@ function indexOf (xs, x) {
   return -1;
 }
 
-}).call(this,_dereq_("/Users/fsrowe/Documents/Web/MDiMapGeocoder/node_modules/browserify/node_modules/insert-module-globals/node_modules/process/browser.js"))
-},{"./index.js":18,"/Users/fsrowe/Documents/Web/MDiMapGeocoder/node_modules/browserify/node_modules/insert-module-globals/node_modules/process/browser.js":12,"buffer":3,"events":6,"inherits":11,"process/browser.js":19,"string_decoder":24}],22:[function(_dereq_,module,exports){
+}).call(this,_dereq_("/Users/fsrowe/Documents/Web/mdimapgeocoder/node_modules/browserify/node_modules/insert-module-globals/node_modules/process/browser.js"))
+},{"./index.js":18,"/Users/fsrowe/Documents/Web/mdimapgeocoder/node_modules/browserify/node_modules/insert-module-globals/node_modules/process/browser.js":12,"buffer":3,"events":6,"inherits":11,"process/browser.js":19,"string_decoder":24}],22:[function(_dereq_,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -6313,7 +6313,7 @@ function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
-}).call(this,_dereq_("/Users/fsrowe/Documents/Web/MDiMapGeocoder/node_modules/browserify/node_modules/insert-module-globals/node_modules/process/browser.js"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":26,"/Users/fsrowe/Documents/Web/MDiMapGeocoder/node_modules/browserify/node_modules/insert-module-globals/node_modules/process/browser.js":12,"inherits":11}]},{},[1])
+}).call(this,_dereq_("/Users/fsrowe/Documents/Web/mdimapgeocoder/node_modules/browserify/node_modules/insert-module-globals/node_modules/process/browser.js"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./support/isBuffer":26,"/Users/fsrowe/Documents/Web/mdimapgeocoder/node_modules/browserify/node_modules/insert-module-globals/node_modules/process/browser.js":12,"inherits":11}]},{},[1])
 (1)
 });
