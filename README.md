@@ -3,7 +3,7 @@ MDiMapGeocoder
 
 A library to use [Maryland's cascading geocoder](http://mdimap.us/ArcGIS/rest/services/GeocodeServices/MD.State.MDCascadingLocatorWithZIPCodes/GeocodeServer/) in Node.js and the browser
 
-Use in Node.js
+### Use in Node.js
 
 ```javascript
 npm install mdimapgeocoder
@@ -11,16 +11,19 @@ npm install mdimapgeocoder
 var MDiMapGeocoder = require('mdimapgeocoder')
 ```
 
-Use in Browser
+### Use in Browser
+* Download build/MDiMapGeocoder.min.js
+
 ```html
-<script src="MDiMapGeocoder.js"></script>
+<script src="MDiMapGeocoder.min.js"></script>
 ```
 
-Example
+### Example
 ```javascript
 
 var geocoder = new MDiMapGeocoder()
 
+//Single Line 
 geocoder.search('1101 Camden Ave, Salisbury MD 21801', function(err, res){
   // example response
   res.candidates[0] = 
@@ -34,9 +37,21 @@ geocoder.search('1101 Camden Ave, Salisbury MD 21801', function(err, res){
       "attributes" : {}
     }
 })
+
+//Address Fields
+geocoder.search({
+  Street: '1101 Camden Ave',
+  City: 'Salisbury',
+  State: 'MD',
+  ZIP: '21801'
+}, function(err, res){
+  
+})
 ```
 
-Specify WKID to return
+### Options
+* wkid - Specify WKID to return. Default 4326
+
 ```javascript
 var geocoder = new MDiMapGeocoder({
   wkid: 26985 // default 4326
