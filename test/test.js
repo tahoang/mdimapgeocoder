@@ -3,6 +3,14 @@ var Geocoder = require('../index.js')
 
 var geocoder = new Geocoder()
 
-  geocoder.search('1101 Camden Ave, Salisbury MD 21801', function(err, res){
-    console.log(err, res.candidates[0])
-  })
+function cb(err, res){
+  console.log(err, res.candidates[0])
+}
+
+geocoder.search('1101 Camden Ave, Salisbury MD 21801', cb)
+geocoder.search({
+  Street: '1101 Camden Ave',
+  City: 'Salisbury',
+  State: 'MD',
+  ZIP: '21801'
+}, cb)
