@@ -5,8 +5,6 @@ module.exports = _dereq_('./lib/MDiMapGeocoder');
 var url = _dereq_('url')
 
 function MDiMapGeocoder(options) {
-  var self = this
-
   this.address_fields = ['Street', 'City', 'State', 'ZIP']
 
   this.options = {
@@ -31,13 +29,12 @@ function MDiMapGeocoder(options) {
   } else {
     this.options.browser = true
   }
-
 }
 
 MDiMapGeocoder.prototype.search = function(term, next) {
   var query = {
     outSR: this.options.wkid,
-    f: 'pjson'
+    f: 'json'
   }
 
   if(typeof term === 'string') {
