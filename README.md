@@ -54,6 +54,6 @@ geocoder.search({
 
 ```javascript
 var geocoder = new MDiMapGeocoder({
-  wkid: 26985 // default 4326
+  wkid: 26985 // return coordinates in MD state plane
 })
 ```
