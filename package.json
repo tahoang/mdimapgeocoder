@@ -4,7 +4,7 @@
   "description": "mdimapgeocoder ===============",
   "main": "index.js",
   "scripts": {
-    "test": "tap ./test"
+    "test": "node ./test/test.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/frankrowe/mdimapgeocoder",
   "dependencies": {
-    "tap": "^0.4.9",
     "browserify": "^3.44.2"
   }
 }

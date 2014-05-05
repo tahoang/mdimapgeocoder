@@ -6,11 +6,13 @@ var url = _dereq_('url')
 
 function MDiMapGeocoder(options) {
   var self = this
-  console.log('asdfasdfasdfasdf')
+
+  this.address_fields = ['Street', 'City', 'State', 'ZIP']
+
   this.options = {
     browser: false,
     wkid: 4326,
-    geo_url: {
+    get_url: {
       protocol: 'http:',
       host: 'mdimap.us',
       pathname: 'ArcGIS/rest/services/GeocodeServices/MD.State.MDCascadingLocatorWithZIPCodes/GeocodeServer/findAddressCandidates'
@@ -30,46 +32,69 @@ function MDiMapGeocoder(options) {
     this.options.browser = true
   }
 
-  this.search = function(term, next){
-    var query = {
-      SingleLine: term
-      , outSR: self.options.wkid
-      , f: 'pjson'
-    }
-    var geo_url = self.options.geo_url
-    geo_url.query = query
-    if(self.options.browser){
-      self.callback = next
-      window._MDiMapGeocoder_cb = self.browserReturn
-      var script = document.createElement('script')
-      geo_url.query.callback = '_MDiMapGeocoder_cb'
-      geo_url = url.format(geo_url)
-      script.src = geo_url
-      document.getElementsByTagName('head')[0].appendChild(script)
-    } else {
-      geo_url = url.format(geo_url)
-      http.get(geo_url, function(res){
-        var data = ''
-        res.on("data", function(chunk) {
-          data += chunk
-        })
-        res.on('end', function(err){
-          if(err) {
-            next(err)
-            return
-          } else {
-            var obj = JSON.parse(data)
-            next(null, obj)
-          }
-        })
-      })
+}
+
+MDiMapGeocoder.prototype.search = function(term, next) {
+  var query = {
+    outSR: this.options.wkid,
+    f: 'pjson'
+  }
+
+  if(typeof term === 'string') {
+    query.SingleLine = term
+  } else if(typeof term === 'object') {
+    for(var i = 0; i < this.address_fields.length; i++){
+      var field = this.address_fields[i]
+      if(term[field]) {
+        query[field] = term[field]
+      }
     }
   }
 
-  this.browserReturn = function(data){
-    self.callback(null, data)
+  var get_url = this.options.get_url
+  get_url.query = query
+
+  if(this.options.browser){
+    this.browserGet(get_url, next)
+  } else {
+    this.nodeGet(get_url, next)
   }
 }
+
+MDiMapGeocoder.prototype.browserGet = function(get_url, next) {
+  get_url.query.callback = '_MDiMapGeocoder_cb'
+  window._MDiMapGeocoder_cb = function(data){
+    next(null, data)
+  }
+  get_url = url.format(get_url)
+
+  var script = document.createElement('script')
+  script.onload = function() {
+    document.head.removeChild(this)
+  }
+  script.src = get_url
+  document.getElementsByTagName('head')[0].appendChild(script)
+}
+
+MDiMapGeocoder.prototype.nodeGet = function(get_url, next) {
+  get_url = url.format(get_url)
+  http.get(get_url, function(res){
+    var data = ''
+    res.on("data", function(chunk) {
+      data += chunk
+    })
+    res.on('end', function(err){
+      if(err) {
+        next(err)
+        return
+      } else {
+        var obj = JSON.parse(data)
+        next(null, obj)
+      }
+    })
+  })
+}
+
 
 module.exports = MDiMapGeocoder
 }).call(this,_dereq_("/usr/local/lib/node_modules/browserify/node_modules/insert-module-globals/node_modules/process/browser.js"))

@@ -1,12 +1,31 @@
 <html>
 <head>
-<script src="../MDiMapGeocoder.js?v=2"></script>
+<script src="../build/MDiMapGeocoder.min.js?v=2"></script>
 <script>
+
   var geocoder = new MDiMapGeocoder()
 
-  geocoder.search('1101 Camden Ave, Salisbury MD 21801', function(err, res){
-    console.log(res)
-  })
+  geocoder.search('1101 Camden Ave, Salisbury MD 21801', cb)
+  geocoder.search({ZIP: '21801'}, cb)
+  geocoder.search({Street: '1101 Camden Ave', City: 'Salisbury'}, cb)
+  geocoder.search({
+    Street: '1101 Camden Ave',
+    City: 'Salisbury',
+    State: 'MD',
+    ZIP: '21801'
+  }, cb)
+
+  function cb(err, res) {
+    if(err){
+      document.getElementById('res').innerHTML += '<pre>' + err +'</pre>'
+    } else {
+      document.getElementById('res').innerHTML += '<pre>' + JSON.stringify(res.candidates[0]) +'</pre>'
+    }
+  }
+
 </script>
 </head>
+<body>
+  <div id="res"></div>
+</body>
 </html>
