@@ -5,9 +5,9 @@ A library to use [Maryland's cascading geocoder](http://geodata.md.gov/imap/rest
 
 ### Use in Node.js
 
-```javascript
-npm install mdimapgeocoder
+* Run `npm install mdimapgeocoder`
 
+```javascript
 var MDiMapGeocoder = require('mdimapgeocoder')
 ```
 
