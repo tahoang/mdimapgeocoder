@@ -51,7 +51,6 @@ MDiMapGeocoder.search({
 * wkid - Specify WKID to return. Default 4326
 
 ```javascript
-var geocoder = new MDiMapGeocoder({
-  wkid: 26985 // return coordinates in MD state plane
-})
+MDiMapGeocoder.search('1101 Camden Ave, Salisbury MD 21801', {wkid: 26985}, callback)
+// "location" : {"x":521564.8398928333,"y":75950.13939312194}
 ```
