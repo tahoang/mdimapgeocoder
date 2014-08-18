@@ -1,1 +1,1 @@
-module.exports = require('./lib/MDiMapGeocoder');
+module.exports = require('./lib/MDiMapGeocoder')
