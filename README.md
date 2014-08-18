@@ -21,10 +21,8 @@ var MDiMapGeocoder = require('mdimapgeocoder')
 ### Example
 ```javascript
 
-var geocoder = new MDiMapGeocoder()
-
-//Single Line 
-geocoder.search('1101 Camden Ave, Salisbury MD 21801', function(err, res){
+//Single Line
+MDiMapGeocoder.search('1101 Camden Ave, Salisbury MD 21801', function(err, res){
   // example response
   res.candidates[0] = 
     {
@@ -39,7 +37,7 @@ geocoder.search('1101 Camden Ave, Salisbury MD 21801', function(err, res){
 })
 
 //Address Fields
-geocoder.search({
+MDiMapGeocoder.search({
   Street: '1101 Camden Ave',
   City: 'Salisbury',
   State: 'MD',
