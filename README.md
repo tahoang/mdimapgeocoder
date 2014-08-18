@@ -26,7 +26,7 @@ var MDiMapGeocoder = require('mdimapgeocoder')
 MDiMapGeocoder.search(address, options?, callback)
 ```
 
-- **address** - string containing full address or object containing Street, City, Stat, ZIP
+- **address** - string containing full address or object containing Street, City, State, ZIP
 - **options** - optional object containing search options (see below)
 - **callback** - function(error, response) {}
 
@@ -60,7 +60,7 @@ MDiMapGeocoder.search({
 ```
 
 ### Options
-* wkid - Specify WKID to return. Default 4326
+- **wkid** - Specify WKID to return. Default 4326
 
 ```javascript
 MDiMapGeocoder.search('1101 Camden Ave, Salisbury MD 21801', {wkid: 26985}, callback)
