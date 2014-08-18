@@ -18,6 +18,16 @@ var MDiMapGeocoder = require('mdimapgeocoder')
 <script src="MDiMapGeocoder.min.js"></script>
 ```
 
+##Usage
+
+```javascript
+MDiMapGeocoder.search(address, options?, callback)
+```
+
+- **address** - string containing full address or object containing Street, City, Stat, ZIP
+- **options** - optional object containing search options (see below)
+- **callback** - function(error, response) {}
+
 ### Example
 ```javascript
 
@@ -52,5 +62,5 @@ MDiMapGeocoder.search({
 
 ```javascript
 MDiMapGeocoder.search('1101 Camden Ave, Salisbury MD 21801', {wkid: 26985}, callback)
-// "location" : {"x":521564.8398928333,"y":75950.13939312194}
+// "location": {"x":521564.8398928333,"y":75950.13939312194}
 ```
