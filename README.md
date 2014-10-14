@@ -64,13 +64,13 @@ MDiMapGeocoder.search({
 
 ```javascript
 var address = '1101 Camden Ave, Salisbury MD 21801'
-var options = {wkid: 26985}
+var options = {wkid: 26985} // MD State Plane
 MDiMapGeocoder.search(address, options, function(err, response) {
   // response.location = {"x":521564.8398928333,"y":75950.13939312194}
 })
 ```
 
-- **outFields**- The list of fields to be included in the returned results.
+- **outFields**- The list of fields to be included in the returned results. You may specify any candidate field from the service resource.
 
 ```javascript
 var address = '1101 Camden Ave, Salisbury MD 21801'
