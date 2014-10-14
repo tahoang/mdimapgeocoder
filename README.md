@@ -63,6 +63,15 @@ MDiMapGeocoder.search({
 - **wkid** - Specify WKID to return. Default 4326
 
 ```javascript
-MDiMapGeocoder.search('1101 Camden Ave, Salisbury MD 21801', {wkid: 26985}, callback)
-// "location": {"x":521564.8398928333,"y":75950.13939312194}
+MDiMapGeocoder.search('1101 Camden Ave, Salisbury MD 21801', {wkid: 26985}, function(err, response) {
+  // response.location = {"x":521564.8398928333,"y":75950.13939312194}
+})
+```
+
+- **outFields**- The list of fields to be included in the returned results.
+
+```javascript
+MDiMapGeocoder.search('1101 Camden Ave, Salisbury MD 21801', {outFields: ['ZIP', 'City']}, function(err, response) {
+  // response.attributes = { ZIP: '21801', City: 'SALISBURY' } }
+})
 ```

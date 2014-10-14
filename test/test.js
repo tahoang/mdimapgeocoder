@@ -7,6 +7,7 @@ function cb(err, res){
 
 MDiMapGeocoder.search('1101 Camden Ave, Salisbury MD 21801', cb)
 MDiMapGeocoder.search('1101 Camden Ave, Salisbury MD 21801', {wkid: 26985}, cb)
+MDiMapGeocoder.search('1101 Camden Ave, Salisbury MD 21801', {outFields: ['ZIP', 'City']}, cb)
 MDiMapGeocoder.search({
   Street: '1101 Camden Ave',
   City: 'Salisbury',
