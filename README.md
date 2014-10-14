@@ -60,7 +60,7 @@ MDiMapGeocoder.search({
 ```
 
 ### Options
-- **wkid** - Specify WKID to return. Default 4326
+- **wkid** (integer) - Specify WKID to return. Default 4326
 
 ```javascript
 var address = '1101 Camden Ave, Salisbury MD 21801'
@@ -70,7 +70,7 @@ MDiMapGeocoder.search(address, options, function(err, response) {
 })
 ```
 
-- **outFields**- The list of fields to be included in the returned results. You may specify any candidate field from the service resource.
+- **outFields** (array) - The list of fields to be included in the returned results. You may specify any candidate field from the service resource.
 
 ```javascript
 var address = '1101 Camden Ave, Salisbury MD 21801'
