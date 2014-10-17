@@ -3,6 +3,8 @@ MDiMapGeocoder
 
 A library to use [Maryland's cascading geocoder](http://geodata.md.gov/imap/rest/services/GeocodeServices/MD_CompositeLocatorWithZIPCodeCentroids/GeocodeServer) in Node.js and the browser
 
+[![NPM](https://nodei.co/npm/mdimapgeocoder.png?global=true)](https://nodei.co/npm/mdimapgeocoder/)
+
 ##Installation
 
 ###Node.js
